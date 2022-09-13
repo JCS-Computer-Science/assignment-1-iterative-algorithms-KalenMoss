@@ -1,15 +1,19 @@
 function bubbleSort(array) {
-	/*
-    ** Compare the first two elements and swap if necessary.
-    ** Then compare the second and third elements and swap if
-    ** necessary. Continue until you've checked and swapped (if needed)
-    ** the last and second last elements.
-    
-    ** Repeat the above process until you get through an entire
-    ** cycle without needing any swaps
-    */
-
-	return array;
+    //gets length of array,
+    let len = array.length;
+    let checked;
+    do {
+        checked = false;
+        for (let i = 0; i < len; i++) {
+            if (array[i] > array[i + 1]) {
+                let tmp = array[i];
+                array[i] = array[i + 1];
+                array[i + 1] = tmp;
+                checked = true;
+            }
+        }
+    } while (checked);
+    return array;
 }
 
 module.exports = bubbleSort;

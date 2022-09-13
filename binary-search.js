@@ -1,13 +1,21 @@
 function binarySearch(array, searchTerm) {
-	/*
-	 ** Check the middle element, if it's higher than the searchTerm
-	 ** then check the element in between the start and the middle, otherwise
-	 ** check the element between the middle and the end
+	let start = 0;
+    let end = array.length - 1;
 
-	 ** repeat the above process for the subset of the array
-	 ** keep repeating with smaller and smaller subsets until you find the searchTerm
-	 */
+    while (start <= end) {
+        let middle = Math.floor((start + end) / 2);
 
+        if (array[middle] == searchTerm) {
+            // found the key
+            return middle;
+        } else if (array[middle] < searchTerm) {
+            // continue searching to the right
+            start = middle + 1;
+        } else {
+            // search searching to the left
+            end = middle - 1;
+        }
+    }
 	return null;
 }
 
