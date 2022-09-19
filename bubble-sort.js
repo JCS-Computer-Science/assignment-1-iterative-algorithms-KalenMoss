@@ -1,19 +1,28 @@
 function bubbleSort(array) {
-    //gets length of array,
+    let firstNum; 
+    let checkedNum;
     let len = array.length;
-    let checked;
-    do {
-        checked = false;
-        for (let i = 0; i < len; i++) {
-            if (array[i] > array[i + 1]) {
-                let tmp = array[i];
-                array[i] = array[i + 1];
-                array[i + 1] = tmp;
-                checked = true;
-            }
+    let isSwapped = false;
+   
+  for(firstNum = 0;  firstNum < len; firstNum++){
+     
+    isSwapped = false;
+     
+    for(checkedNum = 0; checkedNum < len; checkedNum++){
+        if(array[checkedNum] > array[checkedNum + 1]){
+          let temp = array[checkedNum]
+          array[checkedNum] = array[checkedNum+1];
+          array[checkedNum+1] = temp;
+          isSwapped = true;
         }
-    } while (checked);
-    return array;
+    }
+     
+    // IF no two elements were swapped by inner loop, then break
+    if(!isSwapped){
+      break;
+    }
+  }
+  return array;
 }
 
 module.exports = bubbleSort;

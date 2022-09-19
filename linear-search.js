@@ -1,9 +1,14 @@
 function linearSearch(array, searchTerm) {
-	for(let i = 0; i < array.length; i++){
-		if(array[i] == searchTerm){
-			return i
+	let count = 0;
+	for(let check = 0; check < array.length; check++){
+		count++;
+		if(array[check] == searchTerm){
+			console.log(count);
+			return check;
 		}
+		
 	}
+	console.log(count);
 	return null;
 }
 module.exports = linearSearch;

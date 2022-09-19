@@ -22,7 +22,7 @@ console.log(`Bubble Sort: \n${bubbleResult}`);
 
 console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
 
-const searchTestArraySize = 10;
+const searchTestArraySize = 1000;
 const searchTestArray = Array.from(
 	{ length: searchTestArraySize },
 	(v, i) => i * 2 + 1
